@@ -35521,7 +35521,19 @@ input {
     justify-content: space-between;
     margin-left: 15px;
   }
+  .slide-down {
+    display: block;
+    animation: slideDown 0.5s ease-in-out;
+}
 
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
 p#countdownGEM{
     margin-left: 620px;
     justify-content: space-between;
@@ -35602,13 +35614,18 @@ p#countdownTSWAP{
     transform: translateY(0);
 }
 
+#popup-bannerTSWAP.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .rotate-link {
   display: inline-block;
   transition: transform 0.3s ease; /* Animation de transition sur la propriété transform */
 }
 
 .rotate-link:hover {
-  transform: rotate(45deg); /* Rotation de 45 degrés au survol de la souris */
+  transform: rotate(180deg); /* Rotation de 45 degrés au survol de la souris */
 }
 
 
@@ -35616,17 +35633,117 @@ p#countdownTSWAP{
     color: white;
 }
 
-.widget-setting {
-    border: 2px white solid;
+.widget-settingGEM{
     margin: 0 0 0 20px;
-    padding: 0;
     border-radius: 50px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.rotate-link {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+}
+  
+  .countdown-widget {
+    margin: 3px 15px 3px 10px;
+  }
+  
+  .rotate-link {
+    margin-left: 0px; /* Cela pousse le lien à droite en utilisant la propriété "auto" pour la marge à gauche */
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .widget-settingTSWAP{
+    background-color: var(--bs-yellow);
+    margin: 0 0 0 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.duel-container
+
+.duelfx {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #notif-fx {
+    width: 500px;
+    top: 0;
+    left: 0;
+    animation: zoomIn 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), bounce 0.5s ease-in-out 1s, zoomOut 0.6s ease-in-out 3s;
+    filter: contrast(0.8);
+  }
+  
+  #notif-duel {
+    width: 500px;
+    position: absolute;
+    animation: zoomIn 0.7s cubic-bezier(0.25, 0.1, 0.25, 1), bounce 0.5s ease-in-out 1s, zoomOut 0.6s ease-in-out 3s;
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: scale(1);
+    }
+    20%, 80% {
+      transform: scale(1.2); /* Ajustez la valeur de zoom pour le rebondissement */
+    }
+  }
+  
+  @keyframes zoomOut {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(0);
+    }
+  }
+  
+.duel-card {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 850px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+#duelGEM {
+    width: 100%; /* La largeur de l'image occupera 100% de la largeur de la div parente */
+    height: 100%; /* La hauteur de l'image occupera 100% de la hauteur de la div parente */
+    object-fit: cover;
+    
+}
+
+.duel-animation {
+    overflow: hidden;
+}
+
+@keyframes duelslidedown {
+    from {
+      height: 0;
+    }
+    to {
+      height: 850px;
+    }
+}
+
+.duel-animation {
+    animation: duelslidedown 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
 }

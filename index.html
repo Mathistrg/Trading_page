@@ -29,6 +29,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Sono:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magic/1.1.0/magic.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="title" content="Trady">
   <meta name="description" content="Entreprise française dans la finance et la cryptomonnaie.
@@ -1031,11 +1032,16 @@ Nous souhaitons allier sérieux, clarté &amp; simplicité au sujet de la crypto
             <div class="slider" style="background-color: black !important;"></div>
           </label>
           <img id="image2" class="grayscale-image" src="/img/GEM.png" alt="" srcset="" style="max-width: 35px;">
-          <div class="widget-setting">
+          <div class="widget-settingGEM" id="setting-widgetGEM">
             <div class="countdown-widget" id="countdownValueGEM-widget"></div>
+            <a href="" class="rotate-link">
+              <img id="setting-to-viewGEM" src="/img/settings-gear-part-2-svgrepo-com.svg" alt="" style="width: 15px;">
+            </a>
+          </div>
+          <div class="widget-settingTSWAP" id="setting-widgetTSWAP">
             <div class="countdown-widget" id="countdownValueTSWAP-widget"></div> 
             <a href="" class="rotate-link">
-              <img src="/img/settings-gear-part-2-svgrepo-com.svg" alt="" style="width: 20px;">
+              <img id="setting-to-viewTSWAP" src="/img/settings-gear-part-2-svgrepo-com.svg" alt="" style="width: 15px;">
             </a>
           </div> 
         </div>
@@ -1225,7 +1231,19 @@ Nous souhaitons allier sérieux, clarté &amp; simplicité au sujet de la crypto
       <span id="close-btn" class="close-icon">&times;</span>
     </div>
   </div>
-  
+  <div class="duel-container">
+    <div class="duelfx">
+      <img id="notif-fx" src="/img/Test.gif" alt="">
+      <img id="notif-duel" src="/img/duel PNG.png" alt="">
+    </div>
+
+    <div class="duel-card">
+      <img id="duelGEM" src="/img/DUEL BALCK 2.png" alt="">
+      <div class="duel-card-detail">
+        
+      </div>
+    </div>
+  </div>
     <script src="/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>

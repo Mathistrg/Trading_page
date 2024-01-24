@@ -100,15 +100,21 @@ document.addEventListener('DOMContentLoaded', function () {
         var gemContentwidget = document.getElementById("countdownValueGEM-widget");
         var tswapContent = document.getElementById("popup-bannerTSWAP");
         var tswapContentwidget = document.getElementById("countdownValueTSWAP-widget");
+        var widgetsettingGEM = document.getElementById("setting-widgetGEM");
+        var widgetsettingTSWAP = document.getElementById("setting-widgetTSWAP");
       
         if (tswapContent.style.display === "none") {
           gemContent.style.display = "none";
           gemContentwidget.style.display ="none";
+          widgetsettingGEM.style.display ="none";
+          widgetsettingTSWAP.style.display ="flex";
           tswapContent.style.display = "flex";
           tswapContentwidget.style.display ="flex";
         } else {
           gemContent.style.display = "flex";
           gemContentwidget.style.display ="flex";
+          widgetsettingGEM.style.display="flex";
+          widgetsettingTSWAP.style.display="none";
           tswapContent.style.display = "none";
           tswapContentwidget.style.display ="none";
         }
@@ -194,21 +200,39 @@ document.addEventListener('DOMContentLoaded', function () {
       function initializeCountdown(countdownId) {
         const endDate = new Date();
         endDate.setHours(endDate.getHours() + 24);
+
+
+        function formatNumber(num) {
+          return num < 10 ? `0${num}` : num;
+        }
       
         function updateCountdown() {
           const now = new Date();
           const timeDifference = endDate - now;
       
           if (timeDifference > 0) {
-            const hours = Math.floor(timeDifference / (1000 * 60 * 60));
-            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+            const hours = formatNumber(Math.floor(timeDifference / (1000 * 60 * 60)));
+            const minutes = formatNumber(Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60)));
+            const seconds = formatNumber(Math.floor((timeDifference % (1000 * 60)) / 1000));
       
             const countdownDisplay = `${hours} : ${minutes}`;
             document.getElementById(countdownId).textContent = countdownDisplay;
+            document.getElementById("setting-widgetGEM").style.backgroundColor= "var(--bs-pink)";
+            document.getElementById("setting-widgetTSWAP").style.backgroundColor= "var(--bs-yellow)";
           } else {
-            document.getElementById(countdownId).textContent = "Le compte à rebours est terminé!";
+
             clearInterval(countdownInterval);
+            document.getElementById("setting-widgetGEM").style.backgroundColor= "transparent";
+            document.getElementById("setting-widgetTSWAP").style.backgroundColor = "transparent";
+            document.getElementById("setting-widgetGEM").style.border= "2px solid white";
+            document.getElementById("setting-widgetTSWAP").style.border = "2px solid white";
+
+            document.getElementById("popup-bannerGEM").style.display= "none";
+            document.getElementById("popup-bannerTSWAP").style.display = "none";
+            document.getElementById("setting-to-viewTSWAP").src = "img/view-svgrepo-com.svg";
+            document.getElementById("setting-to-viewGEM").src = "img/view-svgrepo-com.svg";
+            document.getElementById("setting-to-viewGEM").style.width = "30px";
+            document.getElementById("setting-to-viewTSWAP").style.width = "30px";
           }
         }
       
@@ -252,3 +276,55 @@ document.addEventListener('DOMContentLoaded', function () {
       
         observer.observe(popupBannerGEM);
       });
+
+      $(document).ready(function() {
+        $("#close-btn").click(function() {
+            // Ajoutez la classe pour le slide down
+            $("#popup-bannerGEM").addClass("slide-down");
+    
+            // Utilisez la fonction one pour exécuter le code une seule fois après la fin de l'animation
+            $("#popup-bannerGEM").one('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function() {
+                // Ajoutez la classe pour la disparition après le slide down
+                $("#popup-bannerGEM").addClass("hidden");
+    
+                // Retirez la classe du slide down pour les utilisations futures
+                $("#popup-bannerGEM").removeClass("slide-down");
+            });
+        });
+    });
+
+    $(document).ready(function() {
+      $("#close-btn").click(function() {
+          // Ajoutez la classe pour le slide down
+          $("#popup-bannerTSWAP").addClass("slide-down");
+  
+          // Utilisez la fonction one pour exécuter le code une seule fois après la fin de l'animation
+          $("#popup-bannerTSWAP").one('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function() {
+              // Ajoutez la classe pour la disparition après le slide down
+              $("#popup-bannerTSWAP").addClass("hidden");
+  
+              // Retirez la classe du slide down pour les utilisations futures
+              $("#popup-bannerTSWAP").removeClass("slide-down");
+          });
+      });
+  });
+
+  const notifDuel = document.getElementById('notif-duel');
+  const notifFx = document.getElementById('notif-fx');
+  const newDiv = document.querySelector('.duel-card');
+  
+  // Ajout d'un écouteur d'événement pour détecter la fin de l'animation
+  notifDuel.addEventListener('animationend', (event) => {
+      // Vérifie si l'animation qui vient de se terminer est celle que nous attendons
+      if (event.animationName === 'zoomOut') {
+          // Une fois que toutes les animations sont terminées, masquer les images
+          notifFx.style.display = 'none';
+          notifDuel.style.display = 'none';
+  
+          // Afficher la nouvelle div
+          newDiv.style.display = 'flex';
+  
+          // Ajouter votre logique d'animation pour la nouvelle div ici
+          newDiv.classList.add('duel-animation');
+      }
+  });

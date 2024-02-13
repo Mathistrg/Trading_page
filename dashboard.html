@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-  width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="7rdPGRxO8Z38ZDYyk5-uZ7BKuRcj4f1YO43wUPaM9RdPQrM8o_6SqfFhfo_Hil9mNp7FCF0X6UyYZlSxdS6WbQ">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/img/logotrady.png">
+  <meta name="i18nDefaultLocale" content="fr_FR">
+  <meta name="i18nLocale" content="fr_FR">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="alternate" hreflang="fr" href="https://trady.ch/">
+  <meta name="robots" content="index, follow">
+  <link rel="apple-touch-icon" href="/img/logotrady.png">
+  <link rel="stylesheet" media="all" href="/assets/application-226f40705486f88cef6fbbaad9e84d8d7f9febb31b96f79c29a6fb97c484b46e.css" data-turbolinks-track="reload">
+  <meta name="turbolinks-visit-control" content="reload">
+  <script src="/packs/js/application-9542c8dfa87c13ed2a55.js" data-turbolinks-track="reload" defer="defer" remote="true"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magic/1.1.0/magic.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="title" content="Trady">
+  <meta name="description" content="Entreprise française dans la finance et la cryptomonnaie.
+Nous souhaitons allier sérieux, clarté &amp; simplicité au sujet de la cryptomonnaie.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TZ9RELJPJ3"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TZ9RELJPJ3');
+</script>
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@tradych">
+  <meta name="twitter:title" content="Trady">
+  <meta name="twitter:description" content="Entreprise française dans la finance et la cryptomonnaie 🇫🇷
+Nous souhaitons allier sérieux, clarté &amp; simplicité au sujet de la cryptomonnaie 🚀">
+  <meta name="twitter:image:src" content="https://pbs.twimg.com/profile_images/1599851142036553729/uZ8RAQsJ_400x400.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: circular;
+
+  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: circular;
+
+  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
+
+
+}</style>
+<link rel="stylesheet" href="style.css">
+</head>
+  <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <audio id="notification_song" src="/assets/beep-cc76466ba07ea742abb41f076530c04a87f1153ef7bee037e8ad7e991ca8a526.mp3"></audio>
+        <div class="navbar trady-navbar">
+    <div class="logo-container">
+      <a href="/"><img class="logo-responsive" alt="trady logo" src="/img/logotrady.png"></a>
+    </div>
+    <div class="trady_navbar_middle" data-controller="navbar">
+      <a data-turbolinks="false" href="/cryptographie">Leçons</a>
+      <a data-turbolinks="false" data-action="click->navbar#markets_click" href="/markets">Marchés</a>
+      <div class="dropdown-custom">
+        <button class="dropbtn-custom">Trading</button>
+        <div class="dropdown-custom-content" style="background-color: rgba(24, 24, 24, 0.5);border-radius: 20px;">
+          <div class="dropdown-custom-right">
+            <button class="dropbtn-custom-right" style="width: 200%; padding: 0; margin-left: -1px;">Simulateur</button>
+            <div class="dropdown-custom-content-right" style="background-color: rgba(24,24,24,0.5); border-radius: 20px; padding: 0px 19px;">
+              <a data-turbolinks="false" data-action="click->navbar#trade_click" style="margin: 0;padding: 7px 7px;" href="/trades">Spot</a>
+              <a data-turbolinks="false" data-action="click->navbar#futures_click" style="margin: 0;" href="/futures">Futures</a>
+            </div>
+          </div>
+          <a data-turbolinks="false" href="/passif">Passif</a>
+        </div>
+      </div>
+      <a data-turbolinks="false" href="/swap">Swap</a>
+      <a data-turbolinks="false" href="/watchlists">Watchlist</a>
+    </div>
+  
+  
+      <div class="mywallet">
+        <div class="tswap" style="margin-right: 30px; margin-top: 15px;">
+          <img id="tswapImage" alt="TSwap" src="https://res.cloudinary.com/dkfzwchma/image/upload/v1685904581/COIN1_k9wpjp.png" width="30" height="30" style="margin-right: 5px;">
+          <p>0.0</p>
+        </div>
+        <div class="notifications" style="margin-right: 30px;">
+          <button class="btn profile-btn notification_btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa-solid fa-bell"></i>
+          </button>
+          <div class="dropdown-menu dropdown-notification" aria-labelledby="dropdownMenuButton">
+            <div class="notification-title">
+              <h2>Notifications</h2>
+            </div>
+              <div class="notification">
+                <p>Pas de nouvelle notification 😥</p>
+              </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="btn profile-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+            <i class="fa-solid fa-user"></i>
+          </button>
+          <div class="dropdown-menu profile-menu" data-controller="search" aria-labelledby="dropdownMenuButton">
+            <div>
+              <a href="/wallets" class="wallet" style="border-radius: 10px;"><i class="fa-solid fa-wallet"></i></a>
+            </div>
+              <div>
+                <a href="/news" class="news"><i class="fa-solid fa-newspaper"></i></a>
+              </div>
+              <div>
+                <a href="/memo" class="memo"><i class="fa-regular fa-note-sticky"></i></a>
+              </div>
+            <div>
+              <a href="/settings" class="user_setting"><i class="fa-solid fa-gear"></i></a>
+            </div>
+            <div>
+              <a href="/dashboard_invest" class="dashboard_invest"><i class="fa-solid fa-landmark"></i></a>
+            </div>
+            <div>
+              <a href="/calendar" class="calendar"><i class="fa-solid fa-calendar"></i></a>
+            </div>
+            <div class="disconnect-btn">
+              <a data-confirm="Voulez-vous vous déconnecter ?" rel="nofollow" data-method="delete" href="/users/sign_out">
+                <i class="fa-solid fa-right-from-bracket"></i>
+  </a>          </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+  
+    <div class="navbar trady-home-phone" style="display:none;">
+      <div class="logo-container">
+        <a href="/"><img class="logo-phone" alt="trady logo telephone" src="/assets/trady-logo-06f584541e595e9e33644988bddc57af556badb046cc385f3c4b1eff69c785ce.png"></a>
+      </div>
+    </div>
+  
+    <div class="navbar trady-navbar-phone" data-controller="navbar">
+      <div class="trady-lessons" data-action="click->navbar#lesson_click">
+        <a href="/lessons" id="lessons_a" class="none ">
+          <i class="fa-solid fa-book"></i>
+          <p style="margin-bottom: 0px;">Leçon</p>
+        </a>
+      </div>
+      <div class="trady-market" data-action="click->navbar#markets_click">
+        <a href="/markets" id="markets_a" class="none ">
+          <i class="fa-solid fa-chart-simple"></i>
+          <p style="margin-bottom: 0px;">Marches</p>
+        </a>
+      </div>
+      <div class="trady-spots" data-action="click->navbar#trade_click">
+        <a href="/trades" id="trades_a" class="none ">
+          <i class="fa-solid fa-arrow-trend-up"></i>
+          <p style="margin-bottom: 0px;">Trade</p>
+        </a>
+      </div>
+      <div class="trady-futures" data-action="click->navbar#futures_click">
+        <a href="/futures" id="futures_a" class="none active">
+          <i class="fa-solid fa-file-contract"></i>
+          <p style="margin-bottom: 0px;">Futures</p>
+        </a>
+      </div>
+      <div class="trady-settings" data-action="click->navbar#profile_click">
+        <a href="/settings" id="settings_a" class="none ">
+          <i class="fa-solid fa-user"></i>
+          <p style="margin-bottom: 0px;">Profil</p>
+        </a>
+      </div>
+    </div>
+  
+        <style>
+  body {
+    background-color: #19191C;
+    background-image: url();
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin-bottom: 400px;
+  }
+  </style>
+
+
+<div class="dashboard">
+    <div class="window" id="window1">
+        <div class="widget" id="widget1A" >
+        <img id="pfp" src="/img/pere.png" alt="">
+        <h4>Reçu de
+            <br>Mathis Truong</br>
+        </h4>
+            <div id="last-transaction">
+                <h2>Dernière transaction</h2>
+                <h1>+ 15,453.05 <img src="/img/COIN.png" alt=""></h1>
+                <h6 id="taux">+ 14.34%</h6>
+                <img id="arrow" src="/img/arrow-up-right-svgrepo-com.svg" alt="">
+            </div>
+        </div>
+        <div class="widget" id="widget1B" >
+            <button class="send-or-get active" id="send" onclick="changeButton('send')">Envoyer</button>
+            <button class="send-or-get inactive"  id="get" onclick="changeButton('get')" >Recevoir</button>
+
+            <div id="formulaire">
+                <label for="choixType">Valeur</label>
+                <select id="choixType" name="choixType" onchange="changerContenuBouton(),changerImage()">
+                    <option value="GEM">GEM</option>
+                    <option value="TSWAP">TSWAP</option>
+                </select>
+        
+                <!-- Conteneurs pour les images -->
+                <div id="imageContainerGEM">
+                    <img id="imageGEM" src="/img/GEM.png" alt="Image GEM">
+                </div>
+                <div id="imageContainerTSWAP">
+                    <img id="imageTSWAP" src="/img/COIN.png" alt="Image TSWAP">
+                </div>
+        
+                <label for="montantAMettre">Quantité</label>
+                <input type="number" id="montantAMettre" name="montantAMettre" placeholder="1,000" oninput="calculerTotal()">
+        
+                <label for="destinataire">Destinataire</label>
+                <input type="text" id="destinataire" name="destinataire" placeholder="utilisateur:id">
+        
+                <div id="totalContainer">
+                    <div id="totalLabel">Total:</div>
+                    <div id="total">0€</div>
+                </div>
+        
+                <button onclick="envoyer()">Envoyer GEM</button>
+            </div>
+        </div>
+      
+    </div>
+    <div class="window" id="window2">
+
+      <div class="widget" id="widget2A"></div>
+
+      <div class="widget yellow active" id="widget2B" onclick="changeWidget('widget2B')">
+        <div class="rond yellow active" id="rond1">
+          <img id="sm-logotrady" src="/img/logotrady.png" alt="">
+        </div>
+        <h3 class="total-type nbr">1,234</h3>
+        <h5 class="type nbr">Total TSWAP</h5>
+        <img id="coin" src="/img/COIN.png" alt="">
+        
+      </div>
+
+      <div class="widget pink inactive" id="widget2C" onclick="changeWidget('widget2C')">
+        <div class="rond pink" id="rond2">
+          <img src="/img/GEM.png" alt="">
+        </div>
+        <h3 class="total-type nbr">2,556</h3>
+        <h5 class="type nbr">Total GEM</h5>
+        <img id="gem" src="img/GEM.png" alt="">
+      </div>
+
+      <div class="widget white inactive" id="widget2D" onclick="changeWidget('widget2D')">
+        <div class="rond white" id="rond3">
+          <img src="/img/stats-svgrepo-com.svg" alt="">
+        </div>
+        <h3 class="total-type nbr">+8.6%</h3>
+        <h5 class="type nbr">APY</h5>
+      </div>
+
+    </div>
+    <div class="window" id="window3">
+      <div class="widget" id="widget3A">
+          <img id="pfp" src="/img/pere.png" alt="">
+              <div id="last-transaction">
+                  <h2>Votre situation</h2>
+                  <h1>+ 15,453.05 <img src="/img/COIN.png" alt=""></h1>
+                  <h6 id="taux">+ 14.34%</h6>
+                  <img id="arrow" src="/img/arrow-up-right-svgrepo-com.svg" alt="">
+              </div>
+      </div> 
+      <div class="widget" id="widget3B">
+        <button class="send-or-get active" id="purchase" onclick="changeButton('purchase')">Achat</button>
+        <button class="send-or-get inactive"  id="retire" onclick="changeButton('retire')" >Retrait</button>
+        <button class="send-or-get inactive" id="exchange" onclick="changeButton('exchange')">Echanger</button>
+        <div id="formulaire">
+            <label for="choiceType">Valeur</label>
+            <select id="choiceType" name="choixType" onchange="changerContenuButton();changeImage();">
+                <option value="GEM">GEM</option>
+                <option value="TSWAP">TSWAP</option>
+            </select>
+    
+            <div id="imageContainerGEM-buy">
+                <img id="imageGEM-buy" src="/img/GEM.png" alt="Image GEM">
+            </div>
+            <div id="imageContainerTSWAP-buy">
+                <img id="imageTSWAP-buy" src="/img/COIN.png" alt="Image TSWAP">
+            </div>
+    
+            <label for="montantAMettre">Quantité</label>
+            <input type="number" id="montantAMettre-buy" name="montantAMettre" placeholder="1,000" oninput="calculateTotal()">
+    
+            <div id="totalContainer">
+                <div id="totalLabel">Total:</div>
+                <div id="total-buy">0€</div>
+            </div>
+    
+            <button id="buy" onclick="acheter()">Acheter GEM</button>
+        </div>
+    </div>
+    
+    </div>
+  </div>
+  <div class="window" id="window4A">
+    <div class="table" id="table-loseT">
+      <div class="column">
+        <div class="header-cell">Devise</div>
+          <div class="cell">
+            <img class="logo-devise" src="https://s2.coinmarketcap.com/static/img/coins/64x64/6210.png" alt="">
+            The Sandbox (SAND)</div>
+          <div class="cell">
+            <img class="logo-devise" src="https://s2.coinmarketcap.com/static/img/coins/64x64/5964.png" alt="">
+            Trust Wallet Token (TWT)</div>
+          <div class="cell">
+            <img class="logo-devise round" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="">
+            Bitcoin (BTC)</div>
+          <div class="cell">
+            <img class="logo-devise round" src="https://s2.coinmarketcap.com/static/img/coins/64x64/52.png" alt="">
+            XRP (XRP)</div>
+      </div>  
+      <div class="column" id="montant">
+        <div class="header-cell">Montant</div>
+        <div class="cell">0.5764</div>
+        <div class="cell">0.0</div>
+        <div class="cell">0.0034</div>
+        <div class="cell">100.0</div>
+      </div>
+      <div class="column" id="valeur">
+        <div class="header-cell">Valeur</div>
+        <div class="cell">0€</div>
+        <div class="cell">0€</div>
+        <div class="cell">104€</div>
+        <div class="cell">69€</div>
+      </div>
+      <div class="column" id="tendance">
+        <div id="result-profit-lose" class="header-cell">Tendance</div>
+        <div id="win" class="cell">+4,2%</div>
+        <div id="lose" class="cell">-10,65%</div>
+        <div id="win" class="cell">+7,8%</div>
+        <div id="win" class="cell">+4,0%</div>
+      </div>
+  </div>
+
+
+    <script src="/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stimulus@2.0.0/dist/stimulus.umd.min.js"></script>
+
+  
+  
+  <svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1002"></defs><polyline id="SvgjsPolyline1003" points="0,0"></polyline><path id="SvgjsPath1004" d="M0 0 "></path></svg>
+</body>
+</html>

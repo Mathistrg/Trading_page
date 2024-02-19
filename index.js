@@ -907,3 +907,67 @@ function acheter() {
 
   alert('Achat de ' + choiceType);
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Activer le bouton "spot" par défaut
+  var spotButton = document.getElementById('spot');
+  buttonClick(spotButton);
+});
+
+function buttonClick(buttonNumber) {
+  // Réinitialiser les styles pour les deux boutons
+  var futuresButton = document.getElementById('futures');
+  var spotButton = document.getElementById('spot');
+
+  futuresButton.classList.remove('active');
+  futuresButton.style.opacity = '1';
+  futuresButton.style.borderBottom = '2px solid #FFF';
+
+  spotButton.classList.remove('active');
+  spotButton.style.opacity = '1';
+  spotButton.style.borderBottom = '2px solid #FFF';
+
+  // Modifier le style du bouton cliqué
+  var clickedButton = buttonNumber === 1 ? futuresButton : spotButton;
+  clickedButton.classList.add('active');
+  clickedButton.style.opacity = '1';
+  clickedButton.style.borderBottom = '2px solid #FFF';
+
+  // Réinitialiser le style de l'autre bouton
+  var otherButton = buttonNumber === 1 ? spotButton : futuresButton;
+  otherButton.style.opacity = '0.5';
+  otherButton.style.borderBottom = 'none';
+}
+
+function toggleSection(sectionId) {
+  var section = document.getElementById(sectionId);
+  var portContent = document.getElementById('portContent');
+  var tableLoseT = document.getElementById('table-loseT');
+  var donut = document.getElementById('chart2');
+
+
+  if (section.style.display === 'none') {
+      // Show the selected section
+      section.style.display = 'flex';
+      donut.style.display ='flex'
+
+      // Hide the other section
+      if (sectionId === 'portContent') {
+          tableLoseT.style.display = 'none';
+          donut.style.display = 'none';
+      } else {
+          portContent.style.display = 'none';
+      }
+  }
+}
+function changerCouleur(boutonClique) {
+  
+
+  var boutons = document.querySelectorAll('.boutonph');
+  boutons.forEach(function(bouton) {
+      bouton.classList.remove('rempli');
+  });
+
+  
+  boutonClique.classList.add('rempli');
+}

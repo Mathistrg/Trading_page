@@ -36757,11 +36757,22 @@ img .rank {
 }
 
 
-
 .window .widget {
     background-color: var(--bs-dark);
     border-radius:10px;
+    animation: dash-win1 2s forwards,fadeinopacity 4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+@keyframes dash-win1 {
+    from {
+        height: 0;
+    }
+    to {
+        min-height: max-content;
+    }
+}
+
+
 
 .window #widget1A {
     height: 270px;
@@ -37103,6 +37114,12 @@ input::-webkit-outer-spin-button {
     filter: grayscale(100%) brightness(00%);
 }
 
+#widget2E {
+    width: 1000px;
+    margin: 20px auto;
+    background-color: transparent;
+}
+
 .dashboard #window3 {
     height: 710px;
     width: 300px;
@@ -37294,6 +37311,10 @@ input::-webkit-outer-spin-button {
     color: lightgreen;
 }
 
+.window#window4A {
+    margin-right: 10px;
+}
+
 #window4A .logo-devise {
     width: 30px;
     padding: 0;
@@ -37302,4 +37323,198 @@ input::-webkit-outer-spin-button {
 
 #window4A .logo-devise.round {
     border-radius: 100px;
+}
+
+#window4A #chart2 {
+    width: 380px;
+    position: absolute;
+    bottom: 30%;
+    left: 40%;
+    transform: translate(40%,30%);
+}
+
+.futures-spot button,
+.port-hist button{
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+    padding: 0;
+    margin-right: 10px;
+    color: white;
+    font-weight: 600;
+}
+
+.futures-spot button.active {
+    opacity: 1;
+    border-bottom: 2px solid #FFF;
+  }
+  
+.futures-spot button.inactive,
+.port-hist button.inactive {
+    opacity: 0.5;
+    border-bottom: none;
+  }
+
+  .content-section {
+    display: none;
+  }
+  
+  .content-section.active {
+    display: flex;
+  }
+
+.boutonph{
+    opacity: 0.5;
+    border-bottom: none;
+}
+
+.boutonph.rempli {
+    opacity: 1;
+    border-bottom: 2px solid #FFF;
+}
+
+.window #portContent .column {
+    width: 180px;
+}
+
+.window .column#contrats {
+    width: 140px;
+}
+
+
+@media (max-width: 1399.98px) {
+    .dashboard {
+        padding: 0 50px 0 50px;
+    }
+    .dashboard #window1 {
+        height: 720px;
+        width: 250px;
+    }
+    .window #widget1A {
+        height: 220px;
+        width: 220px;
+    }
+    .window #widget1A h4 {
+        font-size: 12px;
+    }
+    #widget1A #last-transaction h2 {
+        font-size: 15px;
+    }
+    #widget1A #last-transaction h1 {
+        font-size: 23px;
+    }
+    #widget1A #last-transaction #taux {
+        font-size: 10px;
+    }
+    
+    #widget1A #last-transaction #arrow {
+        left: 17%;
+    }
+    .window #widget1B {
+        height: 450px;
+        width: 220px;
+    }
+    #widget1B .send-or-get{
+        font-size: 11px;
+        width: 85px;
+    }
+    #formulaire {
+        width: 220px;
+    }
+    #formulaire #choixType,
+    #formulaire #choiceType{
+        font-size: 17px;
+    }
+    #formulaire button {
+        width: 200px;
+    }
+    .dashboard #window2 {
+        height: 700px;
+        width: 725px;
+    }
+    #window2 #widget2A {
+        height: 120px;
+    }
+    #widget2B,
+    #widget2C,
+    #widget2D {
+        height: 80px;
+        width: 180px;
+        margin: 0 15px 0 30px;
+    }
+    .widget .total-type {
+        margin: -35px 0 0 63px;
+        font-size: 20px;
+    }
+    .widget .type {
+        margin: -5px 0 0 0;
+    }
+    .rond {
+    height: 50px;
+    width: 50px;
+    }
+    .rond#rond1 #sm-logotrady{
+        width: 27px;
+    }
+    #widget2B #coin {
+        width: 80px;
+    }
+    #widget2C #gem {
+        width: 80px;
+    }
+    .rond#rond3 img{
+        width: 18px;
+    }
+    #widget2E {
+        width: 700px;
+        margin: 10px auto;
+        margin-top: 50px;
+        background-color: transparent;
+    }
+    .dashboard #window3 {
+        height: 700px;
+        width: 250px;
+    }
+    .window #widget3A {
+        height: 220px;
+        width: 220px;
+    }
+    .window #widget3A h4 {
+        font-size: 10px;
+    }
+    #widget3A #last-transaction h2 {
+        font-size: 12px;
+    }
+    #widget3A #last-transaction h1 {
+        font-size: 23px;
+    }
+    #widget3A #last-transaction #taux {
+        font-size: 9px;
+    }
+    
+    #widget3A #last-transaction #arrow {
+        left: 20%;
+    }
+    .window #widget3B {
+        height: 420px;
+        width: 220px;
+    }
+    #widget3B .send-or-get{
+        font-size: 12px;
+        margin: 15px 0 0 20px;
+    }
+    .window .table{
+        display: flex;
+        margin: 20px 0 0 50px;
+        animation: fadeinopacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .window#window4A {
+        margin: 25px 50px 0 50px;
+    }
+    .window #portContent .column {
+        width: 150px;
+    }
+    .window .column#contrats {
+        width: 120px;
+    }
 }

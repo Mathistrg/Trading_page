@@ -44,6 +44,7 @@ Nous souhaitons allier sérieux, clarté &amp; simplicité au sujet de la crypto
   <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TZ9RELJPJ3"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -290,6 +291,48 @@ Nous souhaitons allier sérieux, clarté &amp; simplicité au sujet de la crypto
         <h5 class="type nbr">APY</h5>
       </div>
 
+      <div class="widget" id="widget2E">
+        <div class="futures-spot">
+          <button id="futures" class="inactive" onclick="buttonClick(1)">FUTURES</button>
+          <button id="spot" class="active" onclick="buttonClick(2)">SPOT</button>
+        </div>
+        <div id="chart"></div>
+        <script>          
+          var options = {
+            series: [{
+              name: "€",
+              data: [0, 10000, 9000, 12000, 11000, 15000, 13000, 14000, 17000, 22000, 50000, 10000, 9000, 12000, 11000, 15000, 13000, 14000, 17000, 22000, 50000, 42000]
+            }],
+            chart: {
+              height: 350,
+              type: 'line',
+              zoom: {
+                enabled: false
+              }
+            },
+            dataLabels: {
+              enabled: false
+            },
+            stroke: {
+              curve: 'smooth'
+            },
+            title: {
+              align: 'left'
+            },
+            xaxis: {
+              categories: Array.from({ length: 24 }, (_, index) => {
+                return (index * 3) % 24 + 'H';
+              }),
+            },
+            grid: {
+              show: false,
+            }
+          };
+
+          var chart = new ApexCharts(document.querySelector("#chart"), options);
+          chart.render();
+        </script>
+      </div>
     </div>
     <div class="window" id="window3">
       <div class="widget" id="widget3A">
@@ -334,7 +377,11 @@ Nous souhaitons allier sérieux, clarté &amp; simplicité au sujet de la crypto
     </div>
   </div>
   <div class="window" id="window4A">
-    <div class="table" id="table-loseT">
+    <div class="port-hist">
+      <button id="portefeuille" class="boutonph rempli" onclick="toggleSection('table-loseT');changerCouleur(this)">PORTEFEUILLE</button>
+      <button id="history" class="boutonph" onclick="toggleSection('portContent');changerCouleur(this)">HISTORIQUE</button>
+    </div>
+    <div class="table content-section active" id="table-loseT">
       <div class="column">
         <div class="header-cell">Devise</div>
           <div class="cell">
@@ -372,10 +419,109 @@ Nous souhaitons allier sérieux, clarté &amp; simplicité au sujet de la crypto
         <div id="win" class="cell">+4,0%</div>
       </div>
   </div>
+  <div class="Port content-section inactive" id="portContent" style="display: none;">
+    <div class="table" id="table-loseT">
+      <div class="column" id="contrats">
+        <div class="header-cell">Contrats</div>
+          <div class="cell">
+            <img class="logo-devise round" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="">
+            BTC</div>
+          <div class="cell">
+            <img class="logo-devise round" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="">
+            BTC</div>
+          <div class="cell">
+            <img class="logo-devise round" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="">
+            BTC</div>
+          <div class="cell">
+            <img class="logo-devise round" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="">
+            BTC</div>
+      </div> 
+      <div class="column">
+        <div class="header-cell">Type d'ordre</div>
+        <div id="short" class="cell">Short</div>
+        <div id="short" class="cell">Short</div>
+        <div id="short" class="cell">Short</div>
+        <div id="long" class="cell">Long</div>
+      </div>
+      <div class="column">
+        <div class="header-cell">Prix d'achat</div>
+          <div class="cell">37815.93€</div>
+          <div class="cell">37815.92€</div>
+          <div class="cell">37815.92€</div>
+          <div class="cell">37815.92€</div>
+      </div>  
+      <div class="column">
+        <div class="header-cell">Levier</div>
+        <div class="cell">x17</div>
+        <div class="cell">x17</div>
+        <div class="cell">x17</div>
+        <div class="cell">x17</div>
+      </div>
+      <div class="column">
+        <div class="header-cell">Quantité</div>
+        <div class="cell">100.0</div>
+        <div class="cell">100.0</div>
+        <div class="cell">1000.0</div>
+        <div class="cell">1000.0</div>
+      </div>
+      <div class="column">
+        <div class="header-cell">Prix de cloture</div>
+        <div class="cell">39967.72€</div>
+        <div class="cell">39973.23€</div>
+        <div class="cell">39983.24€</div>
+        <div class="cell">39976.93€</div>
+      </div>
+      <div class="column">
+        <div id="result-profit-lose" class="header-cell">Profit & Lose</div>
+        <div id="win" class="cell">-1.83€</div>
+        <div id="lose" class="cell">-18.38€</div>
+        <div id="lose" class="cell">-18.38€</div>
+        <div id="win" class="cell">-3.28€</div>
+      </div>
+      <div class="column">
+        <div class="header-cell">Date d'achat</div>
+        <div class="cell">2023-12-20 09:00:19</div>
+        <div class="cell">2023-12-20 09:00:19</div>
+        <div class="cell">2023-12-20 09:00:19</div>
+        <div class="cell">2023-12-20 09:00:19</div>
+      </div>
+    </div>
+  </div>
+  <div class="donut" id="chart2"></div>
+    <script>
+      var options = {
+        series: [0,0,70, 40], 
+        labels: ['The Sandbox','Trust Wallet Token','Bitcoin', 'XRP'],
+        colors: ['#0D6EFD','#1EDD88','#FFC65A', '#FD1015'],
+        chart: {
+          type: 'donut',
+        },
+        stroke: {
+          colors: ['#FF9900', '#3366CC'], // Définissez les couleurs de la bordure
+          width: 0, // Largeur de la bordure, définie à 0 pour qu'elle soit invisible
+        },
+        dataLabels: {
+          enabled: false, // Désactive l'affichage des étiquettes
+        },
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }]
+      };
 
+      var chart = new ApexCharts(document.querySelector("#chart2"), options);
+      chart.render();
+
+    </script>
 
     <script src="/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
